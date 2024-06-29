@@ -9,6 +9,7 @@ export default function Login() {
     const handleLogin = (event) => {
         event.preventDefault();
         if (username === 'admin' && password === 'admin') {
+            sessionStorage.setItem('isLoggedIn', 'true'); // ذخیره وضعیت ورود در sessionStorage
             navigate('/dashboard');
         } else {
             alert('Invalid credentials');

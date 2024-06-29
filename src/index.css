@@ -30,3 +30,8 @@ input , textarea {
     outline: none;
     border: none;
 }
+
+.Toastify__toast-body {
+    direction: rtl !important;
+    font-family: 'Dana' !important;
+}
