@@ -4,6 +4,8 @@ import NavBar from '../Components/NavBar'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import InfoBoxes from '../Components/InfoBoxes';
+import AddSection from '../Components/AddSection';
+import MainChart from '../Components/MainChart';
 
 
 export default function Dashboard() {
@@ -36,8 +38,14 @@ export default function Dashboard() {
                 <SideBar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
                 <div className='flex-1'>
                     <NavBar toggleSidebar={toggleSidebar} />
-                    <div className='px-5 py-10'>
+                    <div className='px-5 py-5'>
                         <InfoBoxes />
+                        <div className="grid grid-cols-12 gap-6 sm:gap-7 mt-7">
+                            <AddSection />
+                            <div className="col-span-12 lg:col-span-6 flex flex-col gap-y-5">
+                                <MainChart />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -30,6 +30,9 @@ input , textarea {
     outline: none;
     border: none;
 }
+* {
+    font-family: 'Dana' !important;
+}
 
 .Toastify__toast-body {
     direction: rtl !important;

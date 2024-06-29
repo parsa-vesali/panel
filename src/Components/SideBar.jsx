@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 export default function SideBar({ isOpen, toggleSidebar }) {
     return (
-        <div className={`fixed top-0 right-0 h-full w-[75%] sm:w-[20%] shadow p-5 text-white transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out sm:relative sm:translate-x-0 sm:right-auto sm:left-0 z-50`} style={{ backgroundColor: '#1C2434' }}>
+        <div className={`fixed top-0 right-0  h-full w-[75%] sm:w-[20%] shadow p-5 text-white transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out sm:relative sm:translate-x-0 sm:right-auto sm:left-0 z-50`} style={{ backgroundColor: '#1C2434' }}>
 
             <div className="flex items-center justify-between border-b border-white/50 pb-6">
 
