@@ -3,6 +3,9 @@ import SideBar from '../Components/SideBar'
 import NavBar from '../Components/NavBar'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import InfoBoxes from '../Components/InfoBoxes';
+
+
 export default function Dashboard() {
     useEffect(() => {
         if (sessionStorage.getItem('isLoggedIn') === 'true') {
@@ -33,7 +36,8 @@ export default function Dashboard() {
                 <SideBar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
                 <div className='flex-1'>
                     <NavBar toggleSidebar={toggleSidebar} />
-                    <div className='p-4'>
+                    <div className='px-5 py-10'>
+                        <InfoBoxes />
                     </div>
                 </div>
             </div>
@@ -42,7 +46,5 @@ export default function Dashboard() {
                 <div onClick={toggleSidebar} className="fixed w-full h-full top-0 left-0 bg-black/40 z-20 md:backdrop-blur transition-all"></div>
             )}
         </>
-
-
     );
 }

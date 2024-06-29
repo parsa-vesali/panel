@@ -21,7 +21,10 @@ export default {
         'Dana': "Dana",
         'Dana-Bold': "Dana Bold",
         'Morabba': "Morabba",
-      }
+      },
+      colors: {
+        'dark-blue': '#1C2434',
+      },
     },
   },
   plugins: [
@@ -31,4 +34,3 @@ export default {
     },
   ],
 }
-
