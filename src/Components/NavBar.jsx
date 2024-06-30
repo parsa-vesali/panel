@@ -28,7 +28,7 @@ export default function NavBar({ toggleSidebar }) {
             </div>
 
             {/* دکمه برای حالت موبایل */}
-            <button onClick={toggleSidebar} className='sm:hidden text-white bg-blue-500 p-2.5 rounded'>
+            <button onClick={toggleSidebar} className='lg:hidden text-white bg-blue-500 p-2.5 rounded'>
                 <FaBars />
             </button>
         </div>
