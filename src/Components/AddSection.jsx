@@ -14,7 +14,7 @@ export default function AddSection() {
 
 function Box({ title, subtitle, color, hoverColor }) {
     return (
-        <div className="bg-white px-2 py-4 lg:p-4 w-full flex justify-between items-center shadow rounded">
+        <div className="bg-white px-2 py-4 lg:p-4 w-full h-full flex justify-between items-center shadow rounded">
             <div className="">
                 <h2 className='font-Dana-Bold'>{title}</h2>
                 <p className='text-gray-500  line-clamp-1'>{subtitle}</p>
