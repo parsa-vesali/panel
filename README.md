@@ -17,5 +17,5 @@
 
 ## 💻 preview :
 
-![shopping link](https://github.com/parsa-vesali/panel/blob/main/Screenshot%202024-06-29%20175353.png)
-![shopping link](https://github.com/parsa-vesali/panel/blob/main/Screenshot%202024-06-29%20110001.png)
+![shopping link](https://github.com/parsa-vesali/panel/blob/main/Screenshot%202024-07-02%20071100.png)
+![shopping link](https://github.com/parsa-vesali/panel/blob/main/Screenshot%202024-07-02%20071122.png)
