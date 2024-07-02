@@ -73,7 +73,7 @@ export default function NavBar({ toggleSidebar }) {
 
                 <div
                     className={`absolute  top-14 left-0 w-48 bg-white shadow-md rounded-lg p-2 border-t-2 border-blue-500 transition-all duration-100 ${
-                        dropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible z-40'
+                        dropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible z-50'
                     }`}
                 >
                     <ul className='flex flex-col child:gap-x-2 child:text-gray-500'>

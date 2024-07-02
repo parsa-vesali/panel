@@ -4,7 +4,7 @@ import { FaCodeBranch, FaQuestionCircle, FaRegChartBar } from "react-icons/fa";
 import { RxDashboard } from "react-icons/rx";
 import { LuUsers } from "react-icons/lu";
 import { Link, useLocation } from 'react-router-dom';
-import { AiOutlineUser, AiOutlineRead, AiOutlineFile, AiOutlineCalendar, AiOutlineMail, AiOutlineSetting } from 'react-icons/ai'; // آیکون‌های اوتلاین
+import { AiOutlineUser, AiOutlineRead, AiOutlineFile, AiOutlineMail, AiOutlineSetting } from 'react-icons/ai'; // آیکون‌های اوتلاین
 
 export default function SideBar({ isOpen, toggleSidebar }) {
     const location = useLocation();
@@ -49,11 +49,6 @@ export default function SideBar({ isOpen, toggleSidebar }) {
                 <li className={`p-2 rounded-md ${location.pathname === '/reports' ? 'bg-blue-100/20' : ''}`}>
                     <Link to="/reports" className='flex items-center gap-x-2'>
                         <AiOutlineFile /> گزارش‌ها
-                    </Link>
-                </li>
-                <li className={`p-2 rounded-md ${location.pathname === '/calendar' ? 'bg-blue-100/20' : ''}`}>
-                    <Link to="/calendar" className='flex items-center gap-x-2'>
-                        <AiOutlineCalendar /> تقویم
                     </Link>
                 </li>
                 <li className={`p-2 rounded-md ${location.pathname === '/messages' ? 'bg-blue-100/20' : ''}`}>
