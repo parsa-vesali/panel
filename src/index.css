@@ -36,23 +36,16 @@ input , textarea {
     font-family: 'Dana' !important;
 }
 
-/* .dropdown-enter {
-    opacity: 0;
-    transform: translateY(-10%);
-}
-.dropdown-enter-active {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 200ms, transform 200ms;
+
+/* styles.css */
+.responsive-table-container {
+    width: 100% !important; /* حالت پیش‌فرض برای سایزهای بزرگتر */
 }
 
-/* انیمیشن برای خروج منو */
-/* .dropdown-exit {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 600px) {
+    .responsive-table-container {
+        margin: 0 auto;
+        width: 20rem !important; /* عرض در حالت موبایل */
+        overflow-x: auto !important; /* اسکرول افقی برای محتوا */
+    }
 }
-.dropdown-exit-active {
-    opacity: 0;
-    transform: translateY(-10%);
-    transition: opacity 200ms, transform 200ms;
-} */ 

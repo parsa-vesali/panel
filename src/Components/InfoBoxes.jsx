@@ -25,8 +25,8 @@ function Box({ icon, params }) {
                     {params.number} +
                 </span>
             </div>
-            <div className="flex items-center">
-                <button className='flex items-center justify-center text-sm'>
+            <div className="flex justify-end">
+                <button className='flex items-center justify-center text-sm hover:text-blue-400'>
                     مشاهده همه <MdChevronLeft />
                 </button>
             </div>

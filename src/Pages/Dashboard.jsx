@@ -33,12 +33,12 @@ export default function Dashboard() {
 
     return (
         <>
-            <div className='flex h-screen'>
+            <div className='flex'>
                 <ToastContainer />
                 <SideBar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
                 <div className='flex-1'>
                     <NavBar toggleSidebar={toggleSidebar} />
-                    <div className='px-5 py-5'>
+                    <div className='px-5 py-5 h-screen'>
                         <InfoBoxes />
                         <div className="grid grid-cols-12 gap-6 sm:gap-7 mt-7">
                             <AddSection />
