@@ -46,7 +46,7 @@ export default function StudentList() {
                         <TableContainer className='responsive-table-container' component={Paper} sx={{ overflowX: 'auto' }}> 
                             <Table >
                                 <TableHead>
-                                    <TableRow sx={{ backgroundColor: '#1C2434', color: 'white' }}>
+                                    <TableRow sx={{ backgroundColor: '#38bdf8', color: 'white' }}>
                                         <TableCell sx={{ color: 'white' }}>نام</TableCell>
                                         <TableCell sx={{ color: 'white' }}>نام خانوادگی</TableCell>
                                         <TableCell sx={{ color: 'white' }}>کد ملی</TableCell>

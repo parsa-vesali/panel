@@ -10,6 +10,7 @@ export default function Messages() {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
+    
     return (
             <>
                 <div className='flex'>

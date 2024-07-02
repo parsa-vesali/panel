@@ -1,22 +1,27 @@
-// ./Pages/Reports.js
+// Components/Reports.js
 import React, { useState } from 'react';
 import SideBar from './SideBar';
 import NavBar from './NavBar';
-import Alert from '@mui/material/Alert';
 import { Bar, Line, Pie } from 'react-chartjs-2';
-import { Card, CardContent, Typography, Grid } from '@mui/material';
-import Chart from 'chart.js/auto';
+import { Typography } from '@mui/material';
+import PeopleIcon from '@mui/icons-material/People';
+import ClassIcon from '@mui/icons-material/Class';
+import SchoolIcon from '@mui/icons-material/School';
+import { Chart, registerables } from 'chart.js';
 
-// داده‌های نمونه برای نمودارها
+// Register chart.js components
+Chart.register(...registerables);
+
+// Sample data for charts
 const barData = {
     labels: ['ژانویه', 'فوریه', 'مارس', 'آوریل', 'مه', 'ژوئن'],
     datasets: [
         {
             label: 'دانش آموزان جدید',
-            backgroundColor: 'rgba(75,192,192,1)',
+            backgroundColor: 'rgba(75,192,192,0.4)',
             borderColor: 'rgba(75,192,192,1)',
             borderWidth: 1,
-            hoverBackgroundColor: 'rgba(75,192,192,0.4)',
+            hoverBackgroundColor: 'rgba(75,192,192,0.8)',
             hoverBorderColor: 'rgba(75,192,192,1)',
             data: [65, 59, 80, 81, 56, 55]
         }
@@ -32,10 +37,6 @@ const lineData = {
             lineTension: 0.1,
             backgroundColor: 'rgba(75,192,192,0.4)',
             borderColor: 'rgba(75,192,192,1)',
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
             pointBorderColor: 'rgba(75,192,192,1)',
             pointBackgroundColor: '#fff',
             pointBorderWidth: 1,
@@ -61,6 +62,12 @@ const pieData = {
     ]
 };
 
+const keyInfo = [
+    { label: 'تعداد کل دانش آموزان', value: 500, icon: <PeopleIcon sx={{ fontSize: 40 }} />, gradient: 'bg-gradient-to-r from-pink-500 to-orange-400' },
+    { label: 'تعداد کلاس‌ها', value: 25, icon: <ClassIcon sx={{ fontSize: 40 }} />, gradient: 'bg-gradient-to-r from-blue-500 to-teal-400' },
+    { label: 'تعداد اساتید', value: 15, icon: <SchoolIcon sx={{ fontSize: 40 }} />, gradient: 'bg-gradient-to-r from-green-500 to-lime-400' },
+];
+
 export default function Reports() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -70,59 +77,42 @@ export default function Reports() {
 
     return (
         <>
-            <div className='flex'>
+            <div className="flex">
                 <SideBar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-                <div className='flex-1'>
+                <div className="flex-1">
                     <NavBar toggleSidebar={toggleSidebar} />
-                    <div className='px-5 py-5 h-screen overflow-auto'>
-                        <Alert variant="filled" severity="info" color='primary'>
-                            این صفحه در حال ساخت میباشد
-                        </Alert>
-
-                        {/* نمودارها و کارت‌های اطلاعاتی */}
-                        <Grid container spacing={3} className='mt-5'>
-                            <Grid item xs={12} md={6}>
-                                <Card>
-                                    <CardContent>
-                                        <Typography variant="h6">دانش آموزان جدید</Typography>
-                                        <Bar data={barData} />
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                            <Grid item xs={12} md={6}>
-                                <Card>
-                                    <CardContent>
-                                        <Typography variant="h6">نمرات متوسط</Typography>
-                                        <Line data={lineData} />
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                            <Grid item xs={12} md={6}>
-                                <Card>
-                                    <CardContent>
-                                        <Typography variant="h6">مباحث درسی</Typography>
-                                        <Pie data={pieData} />
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                            {/* کارت اطلاعاتی برای نمایش برخی از اعداد و ارقام */}
-                            <Grid item xs={12} md={6}>
-                                <Card>
-                                    <CardContent>
-                                        <Typography variant="h6">اطلاعات کلیدی</Typography>
-                                        <Typography variant="body2">تعداد کل دانش آموزان: 500</Typography>
-                                        <Typography variant="body2">تعداد کلاس‌ها: 25</Typography>
-                                        <Typography variant="body2">تعداد اساتید: 15</Typography>
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                        </Grid>
+                    <div className="p-6 h-screen overflow-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-2">
+                            <div className="bg-white shadow-lg rounded-lg p-6">
+                                <Typography variant="h6">دانش آموزان جدید</Typography>
+                                <Bar data={barData} />
+                            </div>
+                            <div className="bg-white shadow-lg rounded-lg p-6">
+                                <Typography variant="h6">نمرات متوسط</Typography>
+                                <Line data={lineData} />
+                            </div>
+                            <div className="bg-white shadow-lg rounded-lg p-6">
+                                <Typography variant="h6">مباحث درسی</Typography>
+                                <Pie data={pieData} />
+                            </div>
+                            {keyInfo.map((info, index) => (
+                                <div key={index} className={`flex items-center p-4 rounded-lg text-white ${info.gradient}`}>
+                                    <div className="bg-white bg-opacity-20 p-4 rounded-full mr-2">
+                                        {info.icon}
+                                    </div>
+                                    <div className='mr-5'>
+                                        <Typography variant="body1" className="font-bold">{info.label}</Typography>
+                                        <Typography variant="h4" className="font-bold">{info.value}</Typography>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
             {/* OVERLAY */}
             {isSidebarOpen && (
-                <div onClick={toggleSidebar} className="fixed w-full h-full top-0 left-0 bg-black/40 z-20 md:backdrop-blur transition-all"></div>
+                <div onClick={toggleSidebar} className="fixed w-full h-full top-0 left-0 bg-black/40 z-20 transition-all"></div>
             )}
         </>
     );
