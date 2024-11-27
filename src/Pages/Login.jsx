@@ -9,7 +9,7 @@ export default function Login() {
     const handleLogin = (event) => {
         event.preventDefault();
         if (username === 'admin' && password === 'admin') {
-            sessionStorage.setItem('isLoggedIn', 'true'); // ذخیره وضعیت ورود در sessionStorage
+            sessionStorage.setItem('isLoggedIn', 'true');
             navigate('/dashboard');
         } else {
             alert('Invalid credentials');
@@ -21,7 +21,7 @@ export default function Login() {
             <div className="px-6 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     <h2 className="mt-10 text-center text-lg lg:text-2xl font-Dana-Bold  leading-9 text-gray-800">
-                        سیستم الکترونیکی مدرسه [ فلان ]
+                        سیستم الکترونیکی مدرسه
                     </h2>
                 </div>
 
